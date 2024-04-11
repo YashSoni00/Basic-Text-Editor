@@ -16,6 +16,7 @@ public class TextEditor extends JFrame implements ActionListener {
     JScrollPane scrollPane; // A scrollable view of a component
     JComboBox<String> fontBox; // A component that combines a button or editable field and a drop-down list
     JLabel fontLabel; // A display area for a short text string
+    JPanel panel; // A generic lightweight container
 
     // Design the menu bar
     JMenuBar menuBar;
@@ -25,7 +26,7 @@ public class TextEditor extends JFrame implements ActionListener {
         this.setTitle("Text Editor");
         this.setSize(500, 550);
         this.setLocationRelativeTo(null);
-        this.setLayout(new FlowLayout());
+        this.setLayout(new BorderLayout());
 
         // Customizing the JTextArea object
         textArea = new JTextArea();
@@ -145,15 +146,19 @@ public class TextEditor extends JFrame implements ActionListener {
 
         aboutMenuItem.addActionListener(e -> JOptionPane.showMessageDialog(this, "This is a simple text editor created using Java Swing"));
 
+        // Add the components to the panel
+        panel = new JPanel();
+        panel.add(sizeLabel);
+        panel.add(fontSizeSpinner);
+        panel.add(fontColorButton);
+        panel.add(fontLabel);
+        panel.add(fontBox);
+
         // Add the components to the JFrame
         this.setIconImage(new ImageIcon("icon/text_editor.png").getImage());
+        this.add(panel, BorderLayout.NORTH);
+        this.add(scrollPane, BorderLayout.CENTER);
         this.setJMenuBar(menuBar);
-        this.add(fontLabel);
-        this.add(fontBox);
-        this.add(fontColorButton);
-        this.add(sizeLabel);
-        this.add(fontSizeSpinner);
-        this.add(scrollPane);
         this.setVisible(true);
     }
 
