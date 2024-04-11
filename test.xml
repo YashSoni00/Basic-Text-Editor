@@ -15,7 +15,7 @@
   <manifest></manifest>
   <icon>C:\Users\ysyas\Downloads\text_editor_icon.ico</icon>
   <jre>
-    <path>C:\Program Files\Java\jdk-17</path>
+    <path>%JAVA_HOME%;%PATH%</path>
     <requiresJdk>false</requiresJdk>
     <requires64Bit>false</requires64Bit>
     <minVersion></minVersion>
