@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.function.BiFunction;
-import java.util.function.Function;
 
 public class TextEditor extends JFrame implements ActionListener {
 
